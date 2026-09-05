@@ -1,0 +1,41 @@
+# Xenesis
+
+> Xenesis, Inc. is an optical satellite communications company founded in 2017 by Mark LaPenna and headquartered at 3333 Warrenville Rd, Suite 200, Lisle, Illinois. It builds free-space optical (laser) communications terminals for space-to-ground and satellite-to-satellite data transport, and is developing a planned optical mesh network to backhaul high-bandwidth traffic.
+
+Xenesis's core product is the Xen-Hub, a free-space optical communications terminal rated at greater than 10 Gbps and enabled by a technology transfer from NASA's Jet Propulsion Laboratory. The company positions optical links as faster, higher-capacity and harder to intercept than radio-frequency links or terrestrial fiber, and markets a phased network build — Intercessor — of satellites and ground stations intended to reach global coverage. Publicly reported milestones include a Space Development Agency optical-terminal award in August 2022 and a Phase 2 follow-on that kicked off in December 2023, built to the SDA OCT v3.1 and v4.0 standards; a payload agreement with Airbus for a demonstration slot on the Bartolomeo platform aboard the International Space Station; a $1.2M agreement with Georgia Tech for satellite optical communications; and a testing pact with MBS Lab.
+
+## API surface
+
+Xenesis publishes **no public API, developer portal, SDK, CLI, MCP server, webhook catalog, or machine-readable contract** as of 2026-09-04. The company is a space hardware and telecommunications-infrastructure business selling optical terminals and network capacity to government and commercial satellite operators; software is not the product and there is no developer program.
+
+Contract discovery was run in full and missed on every probe:
+
+- **The company website is locked.** Every path on `xenesis.io` and `www.xenesis.io` — including `/robots.txt`, `/llms.txt`, `/wp-sitemap.xml`, `/openapi.json`, `/graphql`, `/wp-json/` and the entire `/.well-known/` list — returns **HTTP 401** with a Flywheel managed-WordPress "Password Required" interstitial (`www-authenticate: Basic realm="The username is 'flywheel'..."`). Static assets, including the company logo, return 401 as well. This is a site-owner password lock on the whole origin, not an edge policy aimed at crawlers.
+- **No API subdomains exist.** `api.`, `docs.`, `developer.`, `developers.`, `app.`, `portal.`, `status.`, `trust.`, `security.`, `data.`, `mcp.`, `cdn.` and `news.` on `xenesis.io` are all NXDOMAIN. Only the apex and `www` resolve.
+- **No A2A agent card, MCP server, GraphQL endpoint, gRPC/Protobuf, or WSDL** was found on any host.
+- **No first-party packages.** `registry.npmjs.org/xenesis` and `pypi.org/pypi/xenesis/json` both return 404, and `github.com/xenesis` is an unrelated personal account created in 2014 with zero public repositories.
+- **The archive confirms the absence independently.** The last complete publicly archived version of the site (Internet Archive, 2024-09-10) carried exactly three navigation items — Home, News, About Us — with no developer portal, API, documentation or SDK section. The most recent snapshot (2026-06-12) was already a "Coming Soon / Under Construction" placeholder.
+
+## Company
+
+- [Website](https://xenesis.io/): currently returns HTTP 401 site-wide (Flywheel password lock)
+- [LinkedIn](https://www.linkedin.com/company/xenesis-io/)
+- [X / Twitter](https://twitter.com/xenesisio)
+- General contact: info@xenesis.io
+- Headquarters: 3333 Warrenville Rd, Suite 200, Lisle, IL 60532, United States
+
+## Secondary market
+
+- [Forge Global listing](https://forgeglobal.com/xenesis_stock/)
+- [Nasdaq Private Market listing](https://www.nasdaqprivatemarket.com/company/xenesis/)
+
+## API Evangelist artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/xenesis/refs/heads/main/apis.yml): APIs.json 0.20 provider profile
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/xenesis/refs/heads/main/security/xenesis-domain-security.yml): probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC posture
+- [Well-known probe record](https://raw.githubusercontent.com/api-evangelist/xenesis/refs/heads/main/well-known/xenesis-well-known.yml): full contract-discovery evidence with HTTP status for every path probed
+
+---
+generated: 2026-09-04
+method: generated
+source: apis.yml + probed https://xenesis.io/ (no provider-published /llms.txt; https://xenesis.io/llms.txt returned 401 behind a site-wide password lock)

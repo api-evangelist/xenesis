@@ -1,0 +1,117 @@
+generated: '2026-09-04'
+method: probed
+source: https://xenesis.io/
+summary: >-
+  No /.well-known/ discovery document could be read, because the entire xenesis.io
+  origin is behind a site-wide HTTP Basic password lock. Every path on the host —
+  including /robots.txt, /llms.txt, /wp-sitemap.xml and every /.well-known/* path —
+  returns HTTP 401 with a Flywheel "Password Required" HTML interstitial and the
+  header `www-authenticate: Basic realm="The username is 'flywheel'..."`. This is
+  the hosting provider's whole-site lock applied by the site owner, not a bot
+  challenge or an edge policy aimed at crawlers: a browser gets the same 401.
+  No raw files were saved because no probe returned a document, and NO WellKnown,
+  SecurityTxt or APICatalog pointer is wired in apis.yml — a 401 interstitial is
+  an absence, not a served document.
+hosts:
+- host: xenesis.io
+  documents:
+  - {path: /.well-known/security.txt, status: 401, file: null, found: false}
+  - {path: /.well-known/openid-configuration, status: 401, file: null, found: false}
+  - {path: /.well-known/oauth-authorization-server, status: 401, file: null, found: false}
+  - {path: /.well-known/oauth-protected-resource, status: 401, file: null, found: false}
+  - {path: /.well-known/api-catalog, status: 401, file: null, found: false}
+  - {path: /.well-known/ai-plugin.json, status: 401, file: null, found: false}
+  - {path: /.well-known/agent-card.json, status: 401, file: null, found: false}
+  - {path: /.well-known/agent.json, status: 401, file: null, found: false}
+  - {path: /.well-known/mcp.json, status: 401, file: null, found: false}
+  - {path: /.well-known/aauth-resource.json, status: 401, file: null, found: false}
+- host: www.xenesis.io
+  documents:
+  - {path: /.well-known/security.txt, status: 401, file: null, found: false}
+  - {path: /.well-known/openid-configuration, status: 401, file: null, found: false}
+  - {path: /.well-known/oauth-authorization-server, status: 401, file: null, found: false}
+  - {path: /.well-known/oauth-protected-resource, status: 401, file: null, found: false}
+  - {path: /.well-known/api-catalog, status: 401, file: null, found: false}
+  - {path: /.well-known/ai-plugin.json, status: 401, file: null, found: false}
+  - {path: /.well-known/agent-card.json, status: 401, file: null, found: false}
+  - {path: /.well-known/agent.json, status: 401, file: null, found: false}
+  - {path: /.well-known/mcp.json, status: 401, file: null, found: false}
+  - {path: /.well-known/aauth-resource.json, status: 401, file: null, found: false}
+catch_all:
+  behavior: HTTP 401 Basic-auth interstitial on every path, including static assets
+  content_type: text/html
+  www_authenticate: Basic realm="The username is 'flywheel'. Please enter your password."
+  server: Varnish (Flywheel managed WordPress)
+  note: >-
+    Reject any 401 HTML body on this host as evidence of a document. www.xenesis.io
+    is a CNAME to the apex and returns the identical lock.
+contract_discovery:
+  performed: '2026-09-04'
+  result: no machine-readable contract published, and none readable behind the site lock
+  hosts_probed:
+  - xenesis.io
+  - www.xenesis.io
+  subdomains_resolved: []
+  subdomains_tried:
+  - api.xenesis.io
+  - docs.xenesis.io
+  - developer.xenesis.io
+  - developers.xenesis.io
+  - app.xenesis.io
+  - portal.xenesis.io
+  - status.xenesis.io
+  - trust.xenesis.io
+  - security.xenesis.io
+  - data.xenesis.io
+  - mcp.xenesis.io
+  - cdn.xenesis.io
+  - news.xenesis.io
+  subdomain_note: every candidate subdomain is NXDOMAIN; only the apex and www resolve
+  paths:
+  - {path: /robots.txt, status: 401, found: false}
+  - {path: /llms.txt, status: 401, found: false}
+  - {path: /sitemap.xml, status: 401, found: false}
+  - {path: /wp-sitemap.xml, status: 401, found: false}
+  - {path: /page-sitemap.xml, status: 401, found: false}
+  - {path: /openapi.json, status: 401, found: false}
+  - {path: /swagger.json, status: 401, found: false}
+  - {path: /api-docs, status: 401, found: false}
+  - {path: /api, status: 401, found: false}
+  - {path: /graphql, status: 401, found: false}
+  - {path: /wp-json/, status: 401, found: false}
+  - {path: /feed/, status: 401, found: false}
+  ogc_probe:
+    performed: false
+    reason: >-
+      No evidence points at an OGC surface — no baseURL, no docs link, and no prose
+      naming WMS/WFS/WCS/WMTS/CSW or "OGC API". Blind path patterns are out of bounds.
+  archived_evidence:
+    note: >-
+      The last publicly readable full site (Internet Archive, 2026-06-12) was a
+      "Coming Soon / Under Construction" placeholder. The last complete site
+      (Internet Archive, 2024-09-10) carried exactly three navigation items — Home,
+      News, About Us — with no developer portal, API, documentation, SDK, or
+      technical integration section of any kind. The archive confirms the absence
+      of a developer surface independently of the current password lock.
+    snapshots:
+    - {url: 'https://web.archive.org/web/20260612012921/https://xenesis.io/', status: 200}
+    - {url: 'https://web.archive.org/web/20240910001501/https://xenesis.io/', status: 200}
+  github_org:
+    searched: true
+    found: false
+    note: >-
+      github.com/xenesis is an unrelated personal account created 2014-09-25 with
+      0 public repositories, no name, company or blog set. No first-party Xenesis
+      organization was found on GitHub.
+  registries:
+    npm: no first-party package found (registry.npmjs.org/xenesis -> 404)
+    pypi: no first-party package found (pypi.org/pypi/xenesis/json -> 404)
+  related_domain:
+    domain: xenesis.com
+    status: 200
+    note: >-
+      A single black placeholder page reading "© 2022 Xenesis. All rights reserved."
+      on HostGator/websitewelcome infrastructure, unrelated DNS and MX to xenesis.io.
+      Ownership is NOT established, so it is not wired as a pointer. Every probe on
+      it (/robots.txt, /llms.txt, /sitemap.xml, /openapi.json and the full
+      /.well-known/ list) returned 404.

@@ -1,0 +1,15 @@
+generated: '2026-09-04'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: xenesis.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  9 11:02:54 2026 GMT
+  hsts: null
+domains:
+- domain: xenesis.io
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false

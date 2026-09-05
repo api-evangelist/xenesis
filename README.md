@@ -64,5 +64,17 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Xenesis is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/xenesis_stock/
+Xenesis, Inc. is an optical satellite communications company founded in 2017 by Mark LaPenna and
+headquartered in Lisle, Illinois. It builds the Xen-Hub free-space optical (laser) communications
+terminal, enabled by a NASA JPL technology transfer, and is developing Intercessor, a planned
+space-to-ground optical mesh network.
+
+**No API surface.** Xenesis is a space hardware and telecommunications-infrastructure company, not a
+software vendor. Full contract discovery on 2026-09-04 found no public API, developer portal, SDK,
+MCP server, or machine-readable contract, and the entire `xenesis.io` origin currently returns
+HTTP 401 behind a Flywheel site-wide password lock. Every probed URL and its status is recorded in
+[`well-known/xenesis-well-known.yml`](well-known/xenesis-well-known.yml).
+
+- Website: https://xenesis.io/ (HTTP 401 site-wide as of 2026-09-04)
+- LinkedIn: https://www.linkedin.com/company/xenesis-io/
+- Secondary market: https://forgeglobal.com/xenesis_stock/
