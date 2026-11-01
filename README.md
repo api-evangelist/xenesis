@@ -64,17 +64,79 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Xenesis, Inc. is an optical satellite communications company founded in 2017 by Mark LaPenna and
-headquartered in Lisle, Illinois. It builds the Xen-Hub free-space optical (laser) communications
-terminal, enabled by a NASA JPL technology transfer, and is developing Intercessor, a planned
-space-to-ground optical mesh network.
+Xenesis, Inc. is an optical satellite communications company founded in 2017 by Mark LaPenna and headquartered in Lisle, Illinois. It builds the Xen-Hub, a free-space optical (laser) communications terminal enabled by a technology transfer from NASA's Jet Propulsion Laboratory and rated at greater than 10 Gbps, and plans Intercessor, a space-to-ground optical mesh network intended to backhaul high-bandwidth data with lower latency and higher capacity than radio-frequency or terrestrial fiber links. The company has taken Space Development Agency optical-terminal awards (Phase 1 in August 2022, a Phase 2 follow-on in December 2023) built to the SDA OCT v3.1 and v4.0 standards, signed a payload agreement with Airbus for a Bartolomeo demonstration slot on the International Space Station, and holds a $1.2M agreement with Georgia Tech for satellite optical communications work. Xenesis is a space hardware and telecommunications-infrastructure company, not a software vendor: as of this profiling pass it publishes no public API, developer portal, SDK, or machine-readable contract of any kind, and its own website is currently returning an HTTP 401 site-wide password lock.
 
-**No API surface.** Xenesis is a space hardware and telecommunications-infrastructure company, not a
-software vendor. Full contract discovery on 2026-09-04 found no public API, developer portal, SDK,
-MCP server, or machine-readable contract, and the entire `xenesis.io` origin currently returns
-HTTP 401 behind a Flywheel site-wide password lock. Every probed URL and its status is recorded in
-[`well-known/xenesis-well-known.yml`](well-known/xenesis-well-known.yml).
+**Areas:** Company · Space · Satellite · Optical Communications · Free-Space Optics · Laser Communications · Telecommunications · Aerospace · Defense · Connectivity
 
-- Website: https://xenesis.io/ (HTTP 401 site-wide as of 2026-09-04)
-- LinkedIn: https://www.linkedin.com/company/xenesis-io/
-- Secondary market: https://forgeglobal.com/xenesis_stock/
+## Xenesis on APIs.io
+
+Everything profiled for Xenesis is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/xenesis/](https://apis.io/providers/xenesis/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Xenesis Domain Security](https://apis.io/security/xenesis/xenesis-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://xenesis.io/)
+
+## API Evangelist rating
+
+**Kin Score 2.9** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 51.8 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.0** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/xenesis/](https://apis.io/providers/xenesis/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Xenesis: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/xenesis/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
